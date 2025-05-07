@@ -23,10 +23,15 @@
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                <div class="nav-controls">
+                    <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -52,6 +57,7 @@
                 </div>
             </div>
         </div>
+        
     </section>
 
     <!-- About Section -->
@@ -205,41 +211,37 @@
                     </a>
                 </div>
                 <div class="resume-details">
-                    <div class="experience">
-                        <h3>Work Experience</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <h4>Frontend Developer</h4>
-                                <p class="company">Tech Solutions Inc.</p>
-                                <p class="date">Jan 2021 - Present</p>
-                                <ul>
-                                    <li>Developed responsive web applications using React.js and TypeScript</li>
-                                    <li>Collaborated with UX designers to implement pixel-perfect designs</li>
-                                    <li>Optimized website performance reducing load time by 40%</li>
-                                    <li>Implemented CI/CD pipelines for automated testing and deployment</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-item">
-                                <h4>Junior Web Developer</h4>
-                                <p class="company">Digital Creations</p>
-                                <p class="date">Jun 2019 - Dec 2020</p>
-                                <ul>
-                                    <li>Built and maintained client websites using HTML, CSS, and JavaScript</li>
-                                    <li>Implemented SEO best practices increasing organic traffic by 25%</li>
-                                    <li>Worked with WordPress to create custom themes and plugins</li>
-                                    <li>Conducted website performance audits and optimizations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="education">
                         <h3>Education</h3>
                         <div class="timeline">
                             <div class="timeline-item">
                                 <h4>B.Sc. in Artificial Intelligence</h4>
                                 <p class="company">Comsats University</p>
-                                <p class="date">2023 - 2027 </p>
+                                <p class="date">2023 - 2027</p>
                                 <p>Specialized in Web Technologies and Human-Computer Interaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-section">
+                        <h3>Technical Skills</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Frontend Development</h4>
+                                <ul>
+                                    <li>HTML5, CSS3, JavaScript</li>
+                                    <li>React.js and Next.js</li>
+                                    <li>Responsive Web Design</li>
+                                    <li>UI/UX Design Principles</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Tools & Technologies</h4>
+                                <ul>
+                                    <li>Git & GitHub</li>
+                                    <li>VS Code</li>
+                                    <li>Figma</li>
+                                    <li>Chrome DevTools</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -304,5 +306,15 @@
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Blog Modal -->
+    <div id="blog-modal" class="blog-modal" style="display:none;">
+        <div class="blog-modal-content">
+            <span class="blog-modal-close">&times;</span>
+            <div class="blog-modal-body">
+                <!-- Blog content will be injected here -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
