@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with React Hooks - Umer's Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">Umer</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#featured">Featured</a></li>
+                    <li><a href="../index.html#categories">Categories</a></li>
+                    <li><a href="../index.html#latest">Latest</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <article class="blog-post">
+        <div class="container">
+            <div class="post-header">
+                <div class="post-meta">
+                    <span class="category">React</span>
+                    <span class="date">June 15, 2023</span>
+                    <span class="read-time">5 min read</span>
+                </div>
+                <h1>Getting Started with React Hooks</h1>
+                <div class="author">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Author" class="author-image">
+                    <div class="author-info">
+                        <h3>Umer Abbas</h3>
+                        <p>Web Developer & AI Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <p class="lead">
+                    React Hooks have revolutionized the way we write React components. They allow us to use state and other React features without writing class components. In this article, we'll explore the most commonly used hooks and how to implement them in your projects.
+                </p>
+
+                <h2>What are React Hooks?</h2>
+                <p>
+                    React Hooks are functions that let you "hook into" React state and lifecycle features from function components. They were introduced in React 16.8 to allow you to use state and other React features without writing a class.
+                </p>
+
+                <h2>Basic Hooks</h2>
+                <h3>useState</h3>
+                <p>
+                    The useState hook is the most basic hook that allows you to add state to functional components. Here's a simple example:
+                </p>
+                <pre><code class="language-javascript">
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        &lt;div&gt;
+            &lt;p&gt;You clicked {count} times&lt;/p&gt;
+            &lt;button onClick={() => setCount(count + 1)}&gt;
+                Click me
+            &lt;/button&gt;
+        &lt;/div&gt;
+    );
+}
+                </code></pre>
+
+                <h3>useEffect</h3>
+                <p>
+                    The useEffect hook lets you perform side effects in function components. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes.
+                </p>
+                <pre><code class="language-javascript">
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        // Fetch data when component mounts
+        fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => setData(data));
+
+        // Cleanup function
+        return () => {
+            // Cleanup code here
+        };
+    }, []); // Empty array means this effect runs once on mount
+
+    return (
+        &lt;div&gt;
+            {data ? &lt;p&gt;{data}&lt;/p&gt; : &lt;p&gt;Loading...&lt;/p&gt;}
+        &lt;/div&gt;
+    );
+}
+                </code></pre>
+
+                <h2>Custom Hooks</h2>
+                <p>
+                    You can create your own custom hooks to extract component logic into reusable functions. Here's an example of a custom hook for handling form inputs:
+                </p>
+                <pre><code class="language-javascript">
+function useFormInput(initialValue) {
+    const [value, setValue] = useState(initialValue);
+
+    function handleChange(e) {
+        setValue(e.target.value);
+    }
+
+    return {
+        value,
+        onChange: handleChange
+    };
+}
+
+// Usage in a component
+function Form() {
+    const name = useFormInput('');
+    const email = useFormInput('');
+
+    return (
+        &lt;form&gt;
+            &lt;input {...name} placeholder="Name" /&gt;
+            &lt;input {...email} placeholder="Email" /&gt;
+        &lt;/form&gt;
+    );
+}
+                </code></pre>
+
+                <h2>Best Practices</h2>
+                <ul>
+                    <li>Only call hooks at the top level of your function components</li>
+                    <li>Don't call hooks inside loops, conditions, or nested functions</li>
+                    <li>Only call hooks from React function components or custom hooks</li>
+                    <li>Use multiple useEffect hooks to separate concerns</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>
+                    React Hooks have made it easier to write and maintain React components. They provide a more intuitive way to handle state and side effects in functional components. By following the best practices and understanding the core concepts, you can write more efficient and maintainable React applications.
+                </p>
+            </div>
+
+            <div class="post-footer">
+                <div class="tags">
+                    <span class="tag">React</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Web Development</span>
+                </div>
+                <div class="share-buttons">
+                    <h3>Share this article</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About the Blog</h3>
+                    <p>Sharing knowledge about web development, programming, and technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#featured">Featured Posts</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../index.html#latest">Latest Posts</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/Umerabbas25" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/umer-abbas-b8b45331b" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Umer's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+</body>
+</html> 

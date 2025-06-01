@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umer's Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">Umer</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#latest">Latest</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <span class="hero-badge">My Personal Blog</span>
+            <h1>Welcome to My Tech Universe</h1>
+            <p>Exploring technology, web development, and artificial intelligence through in-depth articles and practical tutorials</p>
+            <div class="search-container">
+                <input type="text" placeholder="Search articles..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Readers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts -->
+    <section id="featured" class="featured-posts">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="highlight">Posts</span></h2>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="React Hooks">
+                        <div class="category-tag">React</div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Getting Started with React Hooks</h3>
+                        <p class="post-meta">June 15, 2023 | 5 min read</p>
+                        <p>Learn how to use React Hooks to simplify your functional components and manage state effectively.</p>
+                        <a href="posts/react-hooks.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="CSS Grid vs Flexbox">
+                        <div class="category-tag">CSS</div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>CSS Grid vs Flexbox</h3>
+                        <p class="post-meta">May 2, 2023 | 7 min read</p>
+                        <p>A comprehensive comparison between CSS Grid and Flexbox, with practical examples of when to use each.</p>
+                        <a href="posts/css-grid-flexbox.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by <span class="highlight">Category</span></h2>
+            <div class="categories-grid">
+                <a href="#web-development" class="category-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>12 Articles</p>
+                </a>
+                <a href="#javascript" class="category-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>8 Articles</p>
+                </a>
+                <a href="#react" class="category-card">
+                    <i class="fab fa-react"></i>
+                    <h3>React</h3>
+                    <p>6 Articles</p>
+                </a>
+                <a href="#ai" class="category-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI & Machine Learning</h3>
+                    <p>4 Articles</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts -->
+    <section id="latest" class="latest-posts">
+        <div class="container">
+            <h2 class="section-title">Latest <span class="highlight">Posts</span></h2>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="JavaScript ES6">
+                        <div class="category-tag">JavaScript</div>
+                    </div>
+                    <div class="post-content">
+                        <h3>JavaScript ES6 Features You Should Know</h3>
+                        <p class="post-meta">April 10, 2023 | 8 min read</p>
+                        <p>Explore the most useful ES6 features that will make your JavaScript code cleaner and more efficient.</p>
+                        <a href="posts/javascript-es6.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Add more post cards here -->
+            </div>
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#" class="next">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to My Newsletter</h2>
+                <p>Get the latest articles and updates delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About the Blog</h3>
+                    <p>Sharing knowledge about web development, programming, and technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#featured">Featured Posts</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#latest">Latest Posts</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/Umerabbas25" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/umer-abbas-b8b45331b" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Umer's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
